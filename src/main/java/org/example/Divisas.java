@@ -31,7 +31,20 @@ public class Divisas {
             Cinco_millones_Descuento = 0;
         }
         Valor_total_A_Pagar_Final = Valor_total_con_comision - Cinco_millones_Descuento;
-       int Cantidad_De_Billetes = (int)(Valor_total_A_Pagar_Final / 100000);
+        double division = Valor_total_A_Pagar_Final / 100000;
+
+
+        int Cantidad_De_Billetes;
+
+        if (division == (int)division) {  //
+            Cantidad_De_Billetes = (int)division;
+        } else {
+            if (division > 0) {
+                Cantidad_De_Billetes = (int)division;
+            } else {
+                Cantidad_De_Billetes = (int)division - 1;
+            }
+        }
 
         System.out.println("El valor en pesos es igual a:" + Valor_en_pesos);
         System.out.println("El valor final con comision es igual a:" + Valor_total_con_comision);
